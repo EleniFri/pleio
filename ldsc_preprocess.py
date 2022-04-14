@@ -263,12 +263,6 @@ class generate_sumstat_data(object):
     def check_sumstats(self):
         def find_duplicated_snps(i):
             return(i[i.duplicated()].to_list())
-
-        def check_allele_mismatch(df):
-            res = ~df.eq(df.iloc[:, 0],axis = 0).all(axis = 1)
-            if np.sum(res) > 0:
-                s = df.index['res'].to_numpy[0]
-                raise ValueError('Found Allele mismatch: {}'.format(s))
         
         log.log('Number of variants in common: {}'.format(len(self.common_snps)))
 
