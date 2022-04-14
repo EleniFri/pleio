@@ -288,8 +288,6 @@ class generate_sumstat_data(object):
         for trait in self.data.info.index:
             A1[trait] = self.sumstats[trait].A1
             A2[trait] = self.sumstats[trait].A2
-        check_allele_mismatch(A1)
-        check_allele_mismatch(A2)
         log.log('Found no Allele mismatch')
 
 def generate_pleio_input(sumstat, trait, sprev, pprev, ptype, eta = 'eta', se = 'se', Z = 'Z', N = 'N'):
